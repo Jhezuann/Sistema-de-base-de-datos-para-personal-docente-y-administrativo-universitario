@@ -1,0 +1,13 @@
+{% extends "admin2/base.html" %}
+
+{% block content %}
+
+<h1>Ver usuarios</h1>
+
+<h1>Administrativo</h1>
+<ul>
+	{% for administrativo in administrativo %}
+		<li>{{ administrativo.cedula }} - {{ administrativo.contraseña }}</li>
+	{% endfor %}
+</ul>
+{% endblock %}

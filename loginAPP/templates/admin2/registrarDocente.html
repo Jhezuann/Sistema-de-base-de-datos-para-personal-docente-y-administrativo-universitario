@@ -1,0 +1,14 @@
+{% extends "admin2/base.html" %}
+
+{% block content %}
+<h1>Registrar Docente</h1>
+
+<form method="post">
+  {% csrf_token %}
+  {% for field in form %}
+    {{ field }}
+  {% endfor %}
+  <input type="submit" value="Enviar">
+</form>
+
+{% endblock %}

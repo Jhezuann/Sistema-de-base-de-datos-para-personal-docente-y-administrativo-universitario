@@ -1,0 +1,11 @@
+{% if error %}
+  <p>{{ error }}</p>
+{% endif %}
+<form method="POST">
+  {% csrf_token %}
+  <label for="cedula">Cédula:</label>
+  <input type="text" id="cedula" name="cedula"><br><br>
+  <label for="contraseña">Contraseña:</label>
+  <input type="password" id="contraseña" name="contraseña"><br><br>
+  <input type="submit" value="Iniciar sesión">
+</form>
