@@ -9,7 +9,7 @@ urlpatterns = [
     path('loginAdmin/', LoginAdmin.as_view(), name='loginAdmin'), #url para el inicio de seccion del administrador
     path('homeAdmin', homeAdmin, name="homeAdmin"),
 
-    path('crearDocente', CrearDocente.as_view(), name="crearDocente"),
+    path('crearDocente', crearDocente, name="crearDocente"),
     path('verDocente', verDocente, name="verDocente"),
 
     path('crearAdministrativo', CrearAdministrativo.as_view(), name="crearAdministrativo"), 

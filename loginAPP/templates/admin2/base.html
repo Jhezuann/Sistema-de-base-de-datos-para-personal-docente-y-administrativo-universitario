@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
+{% load static %}
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<title>UNESM</title>
 </head>
 <body>
-	<a href="homeAdmin">Inicio</a>
-	<p>Ver usuarios</p>
-	<a href="verDocente">Docente</a>
-	<a href="verAdministrativo">Administrativo</a>
-	<p>Registrar</p>
-	<a href="crearDocente">Docente</a>
-	<a href="crearAdministrativo">Administrativo</a>
-	<a href="inicio">Salir</a>
+	<div id="menu">
+		<ul class="nav">
+			<li><a href="homeAdmin">Inicio</a></li>
+			<li><a href="#">Ver Usuarios</a>
+			  <ul>
+				<li><a href="verDocente">Docente</a></li>
+				<li><a href="verAdministrativo">Abministrativo</a></li>
+			  </ul>
+			</li>
+          <li><a href="#">Resgistrar Usuarios</a>
+            <ul>
+                <li><a href="crearDocente">Docente</a></li>
+                <li><a href="crearAdministrativo">Abministrativo</a></li>
+            </ul>
+          </li>
+          <li><a href="inicio">Salir</a></li>
+        </ul>
+      </div>
 	{% block content %}
 
     {% endblock %}

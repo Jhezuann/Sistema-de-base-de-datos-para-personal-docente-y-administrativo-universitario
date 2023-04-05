@@ -1,13 +1,90 @@
 {% extends "admin2/base.html" %}
 
 {% block content %}
-
+<br>
+<br>
+<br>
 <h1>Ver usuarios</h1>
 
 <h1>Administrativo</h1>
 <ul>
 	{% for administrativo in administrativo %}
-		<li>{{ administrativo.cedula }} - {{ administrativo.contraseña }}</li>
+		<li>
+			<p>Datos personales</p>
+			<p>Primer nombre del Personal Administrativo: {{ docente.primer_Nombre }},
+			Segundo nombre del Personal Administrativo: {{ docente.segundo_Nombre }},
+			Primer apellido del Personal Administrativo: {{ docente.primer_Apellido }},
+			Segundo Apeliido del Personal Administrativo: {{ docente.segundo_Apellido }}
+			<br>
+			<br>
+			Nacionalidad: {{ docente.nacionalidad }},
+			Fecha de nacimiento: {{ docente.fecha_De_Nacimiento }},
+			Cedula de identidad: {{ docente.cedula }},
+			Sexo: {{ docente.sexo }},
+			Estado civil: {{ docente.estado_Civil }},
+			<br>
+			<br>
+			Dirección: {{ docente.direccion_Completa }},
+			Telefono fijo: {{ docente.telefono_Fijo }},
+			Telefono celular: {{ docente.telefono_Cedular }},
+			Correo electronico: {{ docente.correo_Electronico }}
+			<br>
+			<br>
+			Banco: {{ docente.banco }},
+			Tipo de cuenta bancaria: {{ docente.tipo_De_Cuenta_Bancaria }},
+			Numero de cuenta bancaria: {{ docente.numero_De_Cuenta_Bancaria }}
+			<br>
+			<br>
+			Tipo de trabajo: {{ docente.tipo_De_Trabajo }},
+			Cargo: {{ docente.cargo }},
+			Nucleo {{ docente.nucleo }},
+			Lugar de adscripción: {{ docente.lugar_De_Adscripcion }},
+			Estatus: {{ docente.estatus }},
+			Fecha de ingreso: {{ docente.fecha_De_Ingreso }},
+			<br>
+			<br>
+			Estudia actualmente: {{ docente.estudia_Actualmente }},
+			Nivel academico: {{ docente.nivel_Academico }},
+			<br>
+			<br>
+			Talla del pantalón: {{ docente.talla_De_Pantalon }},
+			Talla de camisa: {{ docente.talla_De_Camisa }},
+			Talla de zapatos: {{ docente.talla_De_Zapatos }},
+			<br>
+			<br>
+			Enfermedades cronicas: {{ docente.enfermedades_Cronica }},
+			Medicamentos: {{ docente.medicamentos }},
+			Condición laboral: {{ docente.condicion_Laboral }},
+			Tiempo de reposo{{ docente.tiempo_De_Reposo }},
+			Observaciones: {{ docente.observaciones }},
+			<br>
+			<br>
+			<p>Becario</p>
+			Primer nombre: {{ docente.primer_Nombre_Beneficiario }},
+			Segundo nombre: {{ docente.segundo_Nombre_Beneficiario }},
+			Primer apellido: {{ docente.primer_Apellido_Beneficiario }},
+			Segundo apellido{{ docente.segundo_Apellido_Beneficiario }},
+			<br>
+			<br>
+			Fecha de nacimiento: {{ docente.fecha_De_Nacimiento_Beneficiario }},
+			Cedula de identidad: {{ docente.cedula_De_Identidad_Beneficiario }},
+			Parentezco: {{ docente.parentezco_Beneficiario }},
+			<br>
+			<br>
+			Sexo: {{ docente.sexo_Beneficiario }},
+			Edad: {{ docente.edad_Beneficiario }},
+			Estado civil: {{ docente.estado_Civil_Beneficiario }},
+			Hijos: {{ docente.hijos_Beneficiario }},
+			<br>
+			<br>
+			Estudia actualmente: {{ docente.estudia_Actualmente_Beneficiario }},
+			Nivel academico: {{ docente.nivel_Academico_Beneficiario }},
+			Enfermedades cronicas: {{ docente.enfermedades_Cronica_Beneficiario }},
+			<br>
+			<br>
+			Medicamentos: {{ docente.medicamentos_Beneficiario }},
+			Observaciones: {{ docente.observaciones_Beneficiario }}</p>
+		</li>
 	{% endfor %}
 </ul>
 {% endblock %}

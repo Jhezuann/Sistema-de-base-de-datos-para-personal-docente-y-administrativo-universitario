@@ -67,7 +67,7 @@ def loginAdministrativo(request):
 				# Si las credenciales son incorrectas, mostramos un mensaje de error.
 				error = "Cédula o contraseña incorrecta."
 				return render(request, 'administrativos/loginAdministrativo.html', {'error': error})
-		except Docente.DoesNotExist:
+		except Administrativo.DoesNotExist:
 			# Si las credenciales son incorrectas, mostramos un mensaje de error.
 			error = "Cédula o contraseña incorrecta."
 			return render(request, 'administrativos/loginAdministrativo.html', {'error': error})
@@ -83,12 +83,16 @@ def loginAdministrativo(request):
 def homeAdmin(request):
 	return render(request, 'admin2/homeAdmin.html')
 
-#vista para crear un personal docente
-class CrearDocente(CreateView):
-	model = Docente
-	form_class = FormularioDocente
-	template_name = 'admin2/registrarDocente.html'
-	success_url = 'verDocente'
+#vista para crear un usuario docente
+def crearDocente(request):
+    if request.method == 'POST':
+        form = FormularioDocente(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('verDocente')
+    else:
+        form = FormularioDocente()
+    return render(request, 'admin2/registrarDocente.html', {'form': form})
 
 #vista para ver los usuario del personal docente
 def verDocente(request):
@@ -111,21 +115,12 @@ def verAdministrativo(request):
 
 
 #-----------------------Vistas de las cuentas del personal docente------------------
+#crear una cuenta docente
 #inicio del docente
 def homeDocente(request):
 	return render(request, 'docentes/homeDocente.html')
 
-"""def editarDocente(request):
-    docente = get_object_or_404(Docente, cedulaDocente=request.user.cedulaDocente)
-    if request.method == 'POST':
-        formulario = DocenteEditForm(request.POST, instance=docente)
-        if formulario.is_valid():
-            formulario.save()
-            return redirect(reverse('homeDocente'))
-    else:
-        formulario = DocenteEditForm(instance=docente)
-    return render(request, 'docentes/editarDocente.html', {'formulario': formulario})
-"""
+
 def verDatos(request):
 	return render(request, 'docentes/verDatos.html')
 
